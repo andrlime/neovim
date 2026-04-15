@@ -13,6 +13,7 @@ require('lazy').setup({
   require('plugins.telescope'),
   require('plugins.todocomments'),
   require('plugins.tree'),
+  require('plugins.statusline'),
   require('plugins.whichkey'),
 }, {
   ui = {

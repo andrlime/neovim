@@ -23,5 +23,5 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.mousemodel = 'extend'
 vim.opt.clipboard  = 'unnamedplus'
-vim.opt.laststatus = 0   -- hide native statusline; floating statusline takes over
+vim.opt.laststatus = 3   -- global statusline at bottom
 vim.opt.cmdheight  = 1
