@@ -62,6 +62,13 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
 -- :Q  — force quit all windows (like q! but global)
 vim.api.nvim_create_user_command('Q', function() vim.cmd 'qa!' end, { desc = 'Force quit all' })
 
+-- ── Comments ─────────────────────────────────────────────────────────────────
+vim.keymap.set('n', '<C-/>', function()
+  local start = vim.fn.line('.')
+  local finish = start + math.max(vim.v.count1 - 1, 0)
+  require('mini.comment').toggle_lines(start, finish)
+end, { desc = 'Toggle comment [count lines]' })
+
 -- ── General ──────────────────────────────────────────────────────────────────
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

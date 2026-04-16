@@ -20,7 +20,8 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff  = 10
+vim.opt.fillchars  = { eob = ' ' }  -- hide ~ on empty lines past end of file
 vim.opt.mousemodel = 'extend'
 vim.opt.clipboard  = 'unnamedplus'
 vim.opt.laststatus = 3   -- global statusline at bottom
