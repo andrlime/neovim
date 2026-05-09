@@ -14,7 +14,6 @@ require('lazy').setup({
   require('plugins.todocomments'),
   require('plugins.tree'),
   require('plugins.statusline'),
-  require('plugins.tla'),
   require('plugins.whichkey'),
 }, {
   ui = {
