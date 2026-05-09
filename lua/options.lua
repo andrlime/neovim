@@ -22,6 +22,9 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff  = 10
 vim.opt.fillchars  = { eob = ' ' }  -- hide ~ on empty lines past end of file
+vim.opt.tabstop    = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab  = true
 vim.opt.mousemodel = 'extend'
 vim.opt.clipboard  = 'unnamedplus'
 vim.opt.laststatus = 3   -- global statusline at bottom
