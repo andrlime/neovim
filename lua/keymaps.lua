@@ -1,20 +1,20 @@
 -- ── Visual mode: HARD DISABLED ──────────────────────────────────────────────
-vim.keymap.set('n', 'v',     '<Nop>', { noremap = true })
-vim.keymap.set('n', 'V',     '<Nop>', { noremap = true })
-vim.keymap.set('n', '<C-v>', '<Nop>', { noremap = true })
-vim.keymap.set('n', 'gv',    '<Nop>', { noremap = true })
+-- vim.keymap.set('n', 'v',     '<Nop>', { noremap = true })
+-- vim.keymap.set('n', 'V',     '<Nop>', { noremap = true })
+-- vim.keymap.set('n', '<C-v>', '<Nop>', { noremap = true })
+-- vim.keymap.set('n', 'gv',    '<Nop>', { noremap = true })
 
 -- ── Mouse: scroll only, all clicks/drags disabled ───────────────────────────
-local mouse_nop_modes = { 'n', 'v', 'i' }
-local mouse_nop_keys = {
-  '<LeftMouse>', '<2-LeftMouse>', '<3-LeftMouse>', '<4-LeftMouse>',
-  '<LeftDrag>', '<LeftRelease>',
-  '<RightMouse>', '<RightDrag>', '<RightRelease>',
-  '<MiddleMouse>',
-}
-for _, key in ipairs(mouse_nop_keys) do
-  vim.keymap.set(mouse_nop_modes, key, '<Nop>', { noremap = true, silent = true })
-end
+-- local mouse_nop_modes = { 'n', 'v', 'i' }
+-- local mouse_nop_keys = {
+--   '<LeftMouse>', '<2-LeftMouse>', '<3-LeftMouse>', '<4-LeftMouse>',
+--   '<LeftDrag>', '<LeftRelease>',
+--   '<RightMouse>', '<RightDrag>', '<RightRelease>',
+--   '<MiddleMouse>',
+-- }
+-- for _, key in ipairs(mouse_nop_keys) do
+--   vim.keymap.set(mouse_nop_modes, key, '<Nop>', { noremap = true, silent = true })
+-- end
 
 -- ── Window navigation ────────────────────────────────────────────────────────
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus left' })
@@ -78,6 +78,10 @@ vim.keymap.set('i', '<F1>', '<Nop>')
 -- ── Terminal mode ────────────────────────────────────────────────────────────
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('t', '<Esc>',      '<C-\\><C-N>', { noremap = true, silent = true })
+
+-- ── macOS-style insert mode deletions ───────────────────────────────────────
+vim.keymap.set('i', '<M-BS>', '<C-w>', { noremap = true, silent = true, desc = 'Delete previous word' })
+vim.keymap.set('i', '<D-BS>', '<C-u>', { noremap = true, silent = true, desc = 'Delete to start of line' })
 
 -- ── VS Code-style line operations ────────────────────────────────────────────
 -- opt+up/down confirmed as <M-Up>/<M-Down> (\e[1;3A / \e[1;3B)
